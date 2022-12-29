@@ -12,6 +12,7 @@ public class Kata3 {
         histogram.increment("ull.es");
         histogram.increment("ull.es");
         new HistogramDisplay(histogram).execute();
+        
+        new HistogramDisplayTest().testCreateDataSet();
     }
-    
 }

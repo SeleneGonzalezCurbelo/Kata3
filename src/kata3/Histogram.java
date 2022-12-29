@@ -4,23 +4,27 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Histogram<T> {
+public class Histogram<T> implements Histogram_<T>{
     
     public final Map<T, Integer> map;
 
     public Histogram() {
         this.map =  new HashMap<T, Integer>();
     }
-    
-    public Integer get(T key){
+
+    @Override
+    public Integer get(T key) {
         return map.get(key);
     }
-    
-    public Set<T> keySet(){
+
+    @Override
+    public Set<T> keySet() {
         return map.keySet();
     }
-    
-    public void increment(T key){        
+
+    @Override
+    public void increment(T key) {
         map.put(key, map.containsKey(key) ? map.get(key) + 1 : 1);
     }
+   
 }
